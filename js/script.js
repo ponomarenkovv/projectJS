@@ -46,7 +46,7 @@ function rememberMyFilms() {
         }
     }
 }
-rememberMyFilms();
+/* rememberMyFilms(); */
 
 function detectPersonalLevel() {
     if (personalMovieDB.count < 10) {
@@ -59,5 +59,20 @@ function detectPersonalLevel() {
         console.log("Произошла ошибка");
     }
 }
-detectPersonalLevel();
-console.log(personalMovieDB);
+/* detectPersonalLevel(); */
+
+function showMyDB (hidden) {
+    if(!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+showMyDB(personalMovieDB.privat);
+
+
+function writeYourGenres() {
+    for (let i = 1; i <=3; i++) {
+        const genre=prompt(`Ваш любимый жанр под номером ${i}`);
+        personalMovieDB.genres[i-1] = genre;
+    }
+}
+writeYourGenres();
